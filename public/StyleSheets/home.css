@@ -1,0 +1,160 @@
+/*navbar*/
+*{
+  margin:0;
+  padding:0;
+  
+}
+.navbar-btn{
+ top:0px;
+ float: right;
+  z-index: 2;
+}
+
+
+.navbar-hide{
+  display:none;
+  
+}
+.navbar1{
+  top:0px;
+  position:absolute;
+  z-index:99;
+  width:100vw;
+  height:100vh;
+  background: #000;  
+  text-align:center;
+}
+.navbar2 {
+
+    z-index: 1000;
+    height: 10vh;
+    width: 100vw;
+    top: 0px;
+    position: absolute;
+    background: transparent;
+}
+
+.navbar2>img {
+    float: left;
+    margin-left: 10px;
+}
+
+
+.navbar1>li>a {
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+    padding: 0px 15px;
+    border: none;
+    background: green;
+    border-radius: 15px;
+    font-size:25px;
+}
+
+.navbar2:hover {
+
+    background: #111;
+}
+
+
+/*Landing Page*/
+.landing-page {
+    color: white;
+    margin: auto;
+    background: /* linear-gradient(to right, rgba(28, 51, 110, 0.8), rgba(235, 235, 235, 0.7)),
+    */
+    linear-gradient(to right, #360033B3, #0b8793B3),
+    /* your image */
+    url('/Images/snap-2.jpg');
+    /*position: relative;*/
+    background-size: contain;
+    background-repeat:  no-repeat;
+}
+
+
+/*CompetitiveProgramming*/
+
+
+/*1*/
+.contest-outer{
+    padding-top: 12vh;
+    width: 50%;
+    height: 100vh;
+    float:left;
+    display: inline;
+}
+
+
+
+
+
+/*2*/
+
+.topPerformers>p {
+    padding: 10%;
+    font-size: 20px;
+}
+
+
+.topPerformers {
+    width: 50%;
+    height: 100vh;
+    float: left;
+    display: inline;
+   
+    padding-top: 12vh;
+}
+
+
+
+
+
+/*Projects Page*/
+
+.liveProjects {
+    width: 50%;
+    height: 100vh;
+    float: left;
+    padding-top: 12vh;
+    
+    z-index: 999;
+    float: left;
+}
+
+.whyProjects {
+    padding-top: 12vh;
+    display: inline;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    
+}
+.whyProjects>p {
+    padding: 10%;
+    font-size: 20px;
+}
+
+#Ideabtn {
+    background-color: green;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    margin-left: 50%;
+    
+}
+
+
+
+
+
+
+
+
+/*This is just for test/*/
+
+h1 {
+    color: white;
+    margin: auto;
+    text-align: center;
+}
