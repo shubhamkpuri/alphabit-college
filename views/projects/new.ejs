@@ -1,0 +1,34 @@
+<% include ../partials/header.ejs %>
+    <div class="text-center ">
+        <h2>New Project </h2>
+    </div>
+    <form action="/projects" method="POST" >
+        <div class="form-group p-3 border rounded w-75 mx-auto">
+            <div class="form-group  m-3">
+                <label for="name[title]">Title:</label>
+                <input type="text" name="project[title]" placeholder="title" class="form-control " required="true">
+            </div>
+             <div class="form-group m-3">
+                <label for="sel1" name="project[type]">Project Type:</label>
+                <select class="form-control" name="project[type]" id="project[type]">
+                    <option value="Android">Android</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="AI">Artificial Intelligence</option>
+                </select>
+            </div> 
+            <div class="form-group  m-3">
+                <label for="name[technology]">Technology to be used:</label>
+                <input type="text" name="project[technology]" placeholder="like Php" class="form-control " required="true">
+            </div>
+            <div class="form-group  m-3">
+                <label for="name[title]">Short Description(must be between 30 - 50 words):</label>
+                <input type="text" name="project[shortDesc]" placeholder="Brief" class="form-control " required="true">
+            </div>
+            <div class="form-group  m-3">
+                <label for="blog[body]">Complete Project Description:</label>
+                <textarea name="project[body]" placeholder="blog post" rows="7" class="form-control"></textarea>
+            </div>
+            <input type="submit" name="submit" class="btn btn-success btn-lg ml-3">
+        </div>
+    </form>

@@ -71,39 +71,26 @@
                     </div>
                 </div>
             </div>
-            <div class="section ">
+            <div class="section active">
                 <div class="text-center m-3" style="font-size:25px; color: white">Live Project</div>
-                <div class="row ">
-                    <div class="col-xl-1"></div>
-                    <div class="card  col-xl-4 mb-3">
-                        <div class="card-header ">Header</div>
-                        <div class="card-body">This is also awesome idea and it is gonna rock</div>
-                        <div class="card-footer"><a href="#" class="btn btn-info">VIEW</a></div>
-                    </div>
-                    <div class="col-xl-2"></div>
-                    <div class="card  mb-3 col-xl-4">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">This is awesome idea</div>
-                        <div class="card-footer"><a href="#" class="btn btn-info">VIEW</a></div>
-                    </div>
-                    <div class="col-xl-1"></div>
-                    <div class="col-xl-1"></div>
-                    <div class="card  col-xl-4">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">This is also awesome idea and it is gonna rock</div>
-                        <div class="card-footer"><a href="#" class="btn btn-info">VIEW</a></div>
-                    </div>
-                    <div class="col-xl-2"></div>
-                    <div class="card   col-xl-4">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">This is awesome idea</div>
-                        <div class="card-footer"><a href="#" class="btn btn-info">VIEW</a></div>
-                    </div>
-                    <div class="col-xl-1"></div>
-                </div>
+                <div class="row">
+                    <% Projects.forEach(function(project) { console.log(project._id);
+                             %>
+                            <div class="card" class="ml-3 "; style="width:40%; margin-left: 5rem; margin-top: 1rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title"><%= project.title%></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">By Author</h6>
+                                    <p class="card-text"><%= project.shortDesc %></p>
+                                    <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                  </div>
+                            </div>
+                              <% });%>
+                        </div>
+                 
                 <div class="m-3 text-center">
-                    <a href="#" class="btn btn-success ">View More Projects</a>
-                    <a href="#" class="btn btn-success">I have project Idea</a>
+                    <a href="projects" class="btn btn-success ">View More Projects</a>
+                    <a href="projects/new" class="btn btn-success">I have project Idea</a>
                 </div>
             </div>
             <div class="section">

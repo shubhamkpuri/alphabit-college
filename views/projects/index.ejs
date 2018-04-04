@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+	
+
+ <% Projects.forEach(function(project) { %>
+			  <div class="card" class="ml-3 "; style="width:40%; margin-left: 5rem; margin-top: 1rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title"><%= project.title%></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">By Author</h6>
+                                    <p class="card-text"><%= project.shortDesc %></p>
+                                    <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                  </div>
+                            </div>
+  <% });%>
