@@ -1,0 +1,26 @@
+<% include partials/header %>
+    <% include partials/landing-navbar %>
+        <div id="wrapper" style="color: white;">
+            <div class="section ">
+            <h3 class="text-center mt-3 "> Login</h3>
+            <div class="row mt-lg-3">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <div class="table-bordered p-2 rounded">
+                        <form action="/login" method="POST">
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" class="form-control" placeholder="Username" required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" placeholder="Password" class="form-control" required="true">
+                            </div>
+                            <button class="btn btn-success">LogIn</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+<% include partials/footer %>

@@ -22,9 +22,11 @@ var cancelfun = () => {
 //Full page .js
 
 $("#wrapper").fullpage({
-    sectionsColor: ['#243766', 'rgb(133, 193, 242)', '#006266', '#4ABDAC', '#000'],
+    sectionsColor: ['#006266', 'rgb(133, 193, 242)', '#006266', '#4ABDAC', '#000'],
+    scrollOverflow:true,
     fadingEffect: true,
     navigation: true,
+
 });
 
 // $("#togglebtn").click(function() {
