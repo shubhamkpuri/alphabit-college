@@ -1,56 +1,27 @@
 <% include ../partials/header %>
     <% include ../partials/landing-navbar %>
-        <div class="container bg-inverse">
-            <div class=" mt-3 ">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3">
-                        <p class="lead">Project</p>
-                        <div class="list-group">
-                            <li class="list-group-item active"><i class="fa fa-eye"></i> Info <i class="fa fa-check-circle float-right"></i></li>
-                            <li class="list-group-item"><a href="/blogs/<%= project._id %>/edit" style="color:inherit;"><i class="fa fa-edit"></i> Update</a></li>
-                            <form action="/blogs/<%= project._id %>?_method=DELETE" method="POST">
-                                <li class="list-group-item "><i class="fa fa-trash"></i>
-                                    <input type="submit" value="Delete" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
-                                </li>
-                            </form>
-                        </div>
+        <div id="wrapper" style="color: white;">
+            <div class="section ">
+                <div class=" border rounded mx-lg-5 p-lg-3 " style="margin-top: 6rem; font-size:1.3rem;">
+                    <h1 class="text-capitalize"><u><%= project.title %> </u></h1>
+                    <span class="float-right"> Submitted by - <%= project.author.username %></span>
+                    <div> Project Type : <strong><%= project.type %></strong></div>
+                    <div> Technology to be used  : <strong><%= project.technology %></strong></div>
+                    <div class=" border rounded mx-lg-3 p-lg-1 "> Brief :
+                      <p>
+                        <%= project.shortDesc %>
                     </div>
-                    <div class="col-lg-9 col-md-9 border rounded p-2">
-                        <div>
-                            <div class="float-right bg-primary text-white mr-1 p-lg-2 rounded text-center">
-                                <% var btime = project.posted  %>
-                                    <%= btime.getDate() %> /
-                                        <%= btime.getMonth() %>
-                                            <br>
-                                            <b> <%= btime.getFullYear() %></b>
-                            </div>
-                            <div>
-                                <h4 class="text-info mt-3 text-center text-capitalize "><%= project.title %></h4>
-                                <i> <h6 >by <%= project.author.username %> </h6></i>
-                            </div>
-                        </div>
-                        <p class="bg-info m-3">
-                            <%= project.technology %>
-                        </p>
-                        <div class="alert alert-primary " role="alert">
-                            <h3>Brief:</h3>
-                            <p>
-                                <%= project.shortDesc %>
-                            </p>
-                        </div>
+                    <div class=" border rounded m-lg-3 p-lg-1 "> Description :
+                      <p>
+                        <%= project.body %>
+                    </div>
+                    <div class="float-right bg-primary text-white p-1 rounded text-center">
+                        <% var ptime = project.posted  %>
+                        <%= ptime.getDate() %> /
+                        <%= ptime.getMonth() %>
                         <br>
-                        <div class="alert alert-dark " role="alert">
-                            <h3>Description:</h3>
-                            <p>
-                                <%- project.body %>
-                            </p>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
+                        <b> <%= ptime.getFullYear() %></b>
                     </div>
                 </div>
-            </div>
-            <br>
         </div>
-        <br>
+<% include ../partials/footer %>
