@@ -1,0 +1,199 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #00394d;
+	overflow-x: hidden;
+}
+p{
+	font-size: 15px;
+}
+
+.kk-first-row{
+	/*background-color: gray;*/
+	background-color: #00bfff;
+	clip-path: polygon(0 4%, 96% 5%, 96% 0, 100% 50%, 96% 100%, 96% 95%, 0 95%);
+
+}
+
+.kk-first-left{
+	padding: 20px 0px 20px 0px;
+	margin: 0;
+	width: 100%;
+}
+
+.kk-first-left img{
+	width: 90%;
+	margin-left: 40px;
+
+}
+
+.kk-first-right{
+	width: 100%;
+	text-align: justify;
+	padding: 30px 0px;
+	margin-top: 20px;
+	padding-right: 20px;
+}
+
+.kk-first-right p{
+	font-size: 16px;
+	text-align: justify;
+}
+
+.kk-first-statement{
+	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 81% 75%, 84% 100%, 76% 75%, 0% 75%);
+	background-color: yellow;
+	padding: 10px;
+	padding-bottom: 50px;
+	border-radius: 10px;
+}
+
+.kk-first-list-style{
+	clip-path: polygon(82% 0, 100% 50%, 83% 100%, 0% 100%, 12% 50%, 0% 0%);
+	background-color: blue;
+	width: 80px;
+	height:50px;
+	padding-left: 15px;
+	padding-top: 12px;
+	margin-top: -50px;
+	font-weight: bold;
+}
+
+.kk-first-list-number{
+	/*clip-path: polygon(0 0, 75% 0, 100% 100%, 21% 100%);*/
+	/*background-color: green;*/
+	shape-margin: 10px;
+	/*padding-left: 35px;*/
+	margin-left: 20px;
+	padding-top: 10px;
+}
+
+.kk-first-list-number-first{
+	/*padding-left: 10px;*/
+	color: green;
+
+}
+
+.kk-first-list-number-second{
+	padding-left: 30px;
+	color: green;
+}
+
+.kk-first-list-number-third{
+	padding-left: 60px;
+	color: green;
+}
+
+.kk-second-row{
+	background-color: gray;
+	clip-path: polygon(16% 0, 100% 1%, 100% 100%, 15% 100%, 0% 50%);
+
+}
+
+.kk-second-container{
+	padding: 20px 0;
+}
+
+.kk-person{
+	font-size: 14px;
+	font-style: italic;
+
+}
+
+.kk-third-row{
+	background-color: #7599bd;
+	clip-path: polygon(0 4%, 6% 6%, 4% 0, 96% 0, 94% 7%, 100% 4%, 100% 96%, 93% 93%, 96% 100%, 4% 100%, 6% 94%, 0 96%);
+
+
+}
+
+.kk-third-left{
+	width: 100%;
+	text-align: justify;
+	padding: 30px 0px;
+	margin-top: 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+ul li{
+	text-align: left;
+
+}
+
+.kk-third-left p{
+	font-size: 16px;
+	text-align: justify;
+}
+
+.kk-third-right{
+	padding: 30px 0px 20px 0px;
+	margin: 0;
+	width: 100%;
+}
+
+.kk-third-right img{
+	width: 90%;
+	margin-right: 40px;
+
+}
+
+.kk-fourth-row{
+	background-color: gray;
+	clip-path: polygon(84% 0, 100% 50%, 84% 99%, 0% 100%, 0 48%, 0% 0%);
+
+}
+
+.kk-fourth-container{
+	padding: 20px 0;
+}
+
+.kk-fifth-row{
+	background-color: #0086b3;
+	clip-path: polygon(0 4%, 96% 5%, 96% 0, 100% 50%, 96% 100%, 96% 95%, 0 95%);
+}
+
+.kk-fifth-left{
+	padding: 20px 0px 20px 0px;
+	margin: 0;
+	width: 100%;
+}
+
+.kk-fifth-left img{
+	width: 90%;
+	margin-left: 40px;
+
+}
+
+.kk-fifth-right{
+	width: 100%;
+	text-align: justify;
+	padding: 30px 0px;
+	margin-top: 20px;
+	padding-right: 20px;
+}
+
+.kk-fifth-right p{
+	font-size: 16px;
+	text-align: justify;
+}
+
+.kk-sixth-row{
+	background-color: gray;
+	clip-path: polygon(16% 0, 100% 1%, 100% 100%, 15% 100%, 0% 50%);
+
+}
+
+.kk-sixth-container{
+	padding: 20px 0;
+}
+
+footer{
+	margin-top: 20px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+footer span{
+	color: red;
+}

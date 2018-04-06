@@ -1,8 +1,9 @@
 <% include partials/header %>
     <% include partials/landing-navbar %>
         <div id="wrapper">
-            <div class="section landing-page">
+            <div class="section landing-page text-center active">
                 <h1 style="font-size: 60px;"><span style="font-size: 90px;">&alpha;</span>Bit</h1>
+                <a href="roadmap" class="btn btn-info" >RoadMap for CSE</a>
             </div>
             <div class="section ">
                 <div class="row">
@@ -74,15 +75,29 @@
             <div class="section ">
                 <div class="text-center m-3" style="font-size:25px; color: white">Live Project</div>
                 <div class="row">
-                    <% Projects.forEach(function(project) { console.log(project._id);
+                    <% Projects.forEach(function(project) {
                              %>
                             <div class="card" class="ml-3 "; style="width:40%; margin-left: 5rem; margin-top: 1rem;">
                                   <div class="card-body">
-                                    <h5 class="card-title"><%= project.title%></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">By <%= project.author.username%></h6>
-                                    <p class="card-text"><%= project.shortDesc %></p>
-                                    <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
-                                    <a href="#" class="card-link">Another link</a>
+                                  <h5 class="card-title"><strong>
+                                  <%= project.title%></strong>
+                                  <span class="float-right btn btn-dark btn-sm">
+                                   <%= project.type%>
+                                  </span>
+                                  </h5>
+                                  <h6 class="card-subtitle mb-2 text-muted">
+                                  <%= project.technology%>
+
+                                  </h6>
+                                  <p class="card-text">
+                                      <%= project.shortDesc.substr(0,120)  %>
+                                  </p>
+                                  <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
+                                  <a href="#" class="btn btn-dark"><i class="fa fa-eye"></i> <%= project.views %> </a>
+
+                                  <span class="float-right">
+                                  By <%= project.author.username%>
+                                  </span>
                                   </div>
                             </div>
                               <% });%>
@@ -93,27 +108,29 @@
                     <a href="projects/new" class="btn btn-success">I have project Idea</a>
                 </div>
             </div>
-            <div class="section active">
+            <div class="section ">
                 <div class="slide text-center" data-anchor="slide1">
-                  <h1>WHY &alpha;bit</h1>
-                      <h3 class="mt-2">  To  promote and improve the overall programming skills of the students.
+                  <h1>Why &alpha;bit</h1>
+                      <h3 class="mt-2  text-white" style="padding:5rem;">
+                          To  promote and improve the overall programming skills of the students.
+                          <br>
+                        To create a culture of Competitive programming & prepare the students for prestigious coding contests.
                       </h3>
                 </div>
                 <div class="slide" data-anchor="slide2">
-                    <div class="row">
-                        <div class="col-lg-6">
-                        </div>
-                        <div class="col-lg-6">
-                        </div>
-                    </div>
+                      <h1>Why &alpha;bit</h1>
+                    <h3 class="mt-2 text-white text-center" style="padding:5rem;">
+
+
+                            To build a community of students with shared interests so as to provide them an opportunity to learn by working in teams & master the art of team work & collaboration.
+
+                    </h3>
                 </div>
                 <div class="slide" data-anchor="slide3">
-                    <div class="row">
-                        <div class="col-lg-6">
-                        </div>
-                        <div class="col-lg-6">
-                        </div>
-                    </div>
+                      <h1>Why &alpha;bit</h1>
+                    <h3 class="mt-2 text-white text-center" style="padding:5rem;">
+To guide the uninitiated students on how to proceed & make the most of their precious four years in B.Tech.
+                    </h3>
                 </div>
             </div>
             <div class="section ">

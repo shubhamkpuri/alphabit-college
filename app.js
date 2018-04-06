@@ -64,10 +64,17 @@ var ProjectSchema = new mongoose.Schema({
   technology: String,
   shortDesc: String,
   body: String,
-  likes: {
+  views: {
     type: Number,
     default: 0
   },
+  interested : [{
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
+    },
+    username: String
+  }],
   posted: {
     type: Date,
     default: Date.now
@@ -108,7 +115,11 @@ app.get("/", (req, res) => {
 
 
 });
-
+app.get("/roadmap", (req, res) => {
+  res.render("description.ejs", {
+    title: 'RoadMap '
+  });
+});
 app.get("/ques", (req, res) => {
   res.render("ques.ejs", {
     title: 'Q/A '
@@ -148,6 +159,9 @@ app.get('/projects/:id', (req, res) => {
       console.log("problem");
       // res.redirect("/projects");
     } else {
+        foundProject.views++;
+
+        foundProject.save();
       console.log(foundProject);
       res.render("projects/show.ejs", {
         project: foundProject,
@@ -171,6 +185,27 @@ app.get('/projects', (req, res) => {
     }
   });
 });
+app.get('/projects/:id/addInterested',isLoggedIn, (req, res) => {
+  Project.findById(req.params.id, (err, foundProject) => {
+    if (err) {
+      console.log("problem");
+      // res.redirect("/projects");
+    } else {
+    console.log("working");
+  //  res.redirect("/projects/:id");
+    foundProject.interested.push(req.user);
+
+    foundProject.save();
+    res.redirect("/projects/"+foundProject._id);
+      // res.render("projects/show.ejs", {
+      //   project: foundProject,
+      //   title: "Project"
+      // });
+    }
+  });
+});
+
+
 
 //=======================
 // Auth Routes

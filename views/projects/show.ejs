@@ -1,27 +1,59 @@
 <% include ../partials/header %>
-    <% include ../partials/landing-navbar %>
-        <div id="wrapper" style="color: white;">
-            <div class="section ">
-                <div class=" border rounded mx-lg-5 p-lg-3 " style="margin-top: 6rem; font-size:1.3rem;">
-                    <h1 class="text-capitalize"><u><%= project.title %> </u></h1>
-                    <span class="float-right"> Submitted by - <%= project.author.username %></span>
-                    <div> Project Type : <strong><%= project.type %></strong></div>
-                    <div> Technology to be used  : <strong><%= project.technology %></strong></div>
-                    <div class=" border rounded mx-lg-3 p-lg-1 "> Brief :
-                      <p>
-                        <%= project.shortDesc %>
-                    </div>
-                    <div class=" border rounded m-lg-3 p-lg-1 "> Description :
-                      <p>
-                        <%= project.body %>
-                    </div>
-                    <div class="float-right bg-primary text-white p-1 rounded text-center">
-                        <% var ptime = project.posted  %>
-                        <%= ptime.getDate() %> /
-                        <%= ptime.getMonth() %>
-                        <br>
-                        <b> <%= ptime.getFullYear() %></b>
-                    </div>
-                </div>
+  <% include ../partials/landing-navbar %>
+    <div id="wrapper" style="color: white;">
+      <div class="section ">
+        <div class="row" style="margin-top: 6rem; font-size:1.3rem;">
+
+          <div class="col-lg-1"> </div>
+          <div class=" col-lg-8  border rounded  p-lg-3">
+              <h1 class="text-capitalize"><u><%= project.title %> </u></h1>
+              <div class="float-right bg-primary text-white p-1 rounded text-center">
+                <% var ptime = project.posted  %>
+                  <%= ptime.getDate() %> /
+                    <%= ptime.getMonth() %>
+                      <br>
+                      <b> <%= ptime.getFullYear() %></b>
+              </div>
+              <span> Submitted by - <%= project.author.username %></span>
+              <div> Project Type : <strong><%= project.type %></strong></div>
+
+              <div> Technology to be used : <strong><%= project.technology %></strong></div>
+              <div class=" border rounded mx-lg-3 p-lg-1 "><strong> Brief :</strong>
+                <p>
+                  <%= project.shortDesc %>
+              </div>
+              <div class=" border rounded m-lg-3 p-lg-1 "><strong> Description :</strong>
+                <p>
+                  <%= project.body %>
+              </div>
+
+          </div>
+          <div class="col-lg-2 border rounded  bg-white " style="color:#006266">
+                <h3>  Interested Students
+                  <% var pppp= project.interested;
+
+                  var obj = 0 ;
+                  pppp.forEach(function(Interesteduser) {
+                    // console.log(Interesteduser._id);
+                    // console.log(currentUser._id);
+                      if(Interesteduser && currentUser && (currentUser._id.toString() == Interesteduser._id.toString()) ){
+                        obj= 1;
+                        console.log("here1");
+                      }
+                  });
+                  if(currentUser && !obj){ %>
+                  <a href="/projects/<%= project._id %>/addInterested" class="btn btn-primary">Add me</a>
+                    <% } %>
+                </h3><hr>
+                <ol>
+                  <% var pppp= project.interested;
+                   pppp.forEach(function(Interesteduser) { if(Interesteduser) { %>
+                     <li class="ml-3"><%= Interesteduser.username %> </li>
+                  <%} });%>
+                  </ol>
+          </div>
+          <div class="col-lg-1 ">
+          </div>
         </div>
-<% include ../partials/footer %>
+      </div>
+      <% include ../partials/footer %>

@@ -18,7 +18,6 @@ var cancelfun = () => {
 
 
 
-
 //Full page .js
 
 $("#wrapper").fullpage({
