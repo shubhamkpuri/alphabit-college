@@ -22,8 +22,14 @@
 
                                     </h6>
                                     <p class="card-text">
-                                    <%= project.shortDesc.substr(0,120)  %>
-                                    
+                                    <% var projectDesc = project.shortDesc ;
+                                    try{
+                                        var projectDesc = project.shortDesc.substr(0,120) ;
+                                    }catch(e){
+
+                                    }%>
+                                    <%= projectDesc  %>
+
                                     </p>
                                     <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
                                     <a href="#" class="btn btn-dark"><i class="fa fa-eye"></i> <%= project.views %> </a>

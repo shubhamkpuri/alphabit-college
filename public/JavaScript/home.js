@@ -1,21 +1,12 @@
-document.getElementById("togglebtn").addEventListener("click", () => {
-
-    document.getElementById("navbar-hide").classList.toggle("navbar-hide");
-
-
-});
-//ECS key for getting out of navigation
-document.onkeydown = function(evt) {
-    evt = evt || window.event;
-    if (evt.keyCode == 27) {
-        cancelfun();
-    }
-};
+function formvalidate(number, idname, elementname){
+    var v= document.getElementById(elementname).value;
+    console.log(v);
+    alert(v);
+}
 //for hiding navbar
 var cancelfun = () => {
     document.getElementById("navbar-hide").classList.add("navbar-hide");
 }
-
 
 
 //Full page .js
