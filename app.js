@@ -8,8 +8,8 @@ var express = require('express'),
     passportLocalMongoose = require("passport-local-mongoose");
 var app = express();
 
-
-mongoose.connect("mongodb://localhost/alphbit");
+mongoose.connect("mongodb://skpuri:skpuri@ds255768.mlab.com:55768/yelp_camp")
+//mongoose.connect("mongodb://localhost/alphbit");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({

@@ -19,7 +19,18 @@
                                   </span>
                                   </h5>
                                   <h6 class="card-subtitle mb-2 text-muted">
-                                  <%= event.startTime%> - <%= event.endTime%>
+                                  <span class="float-left"> Timings :</span>
+                                  <div class="float-left bg-primary text-white p-1 rounded text-center mx-2">
+                                       <strong><%= event.startTime.slice(0,10) %>
+                                       <br><%= event.startTime.slice(11,16) %></strong>
+                                   </div>
+                                   <div class="float-left bg-primary text-white p-1 rounded text-center mx-2">
+                                        <strong><%= event.endTime.slice(0,10) %>
+                                        <br><%= event.endTime.slice(11,16) %></strong>
+                                    </div>
+
+                                    <br>
+                                    <br>
 
                                   </h6>
                                   <p class="card-text">
