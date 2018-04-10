@@ -1,52 +1,54 @@
 <% include ../partials/header %>
-  <% include ../partials/landing-navbar %>
-    <div id="wrapper" style="color: white;">
-      <div class="section ">
-        <div class="row" style="margin-top: 6rem; font-size:1.3rem;">
+    <% include ../partials/landing-navbar %>
+        <div id="wrapper">
+            <div class="section">
+                <div class="container" >
+                    <div class="row " id="show-div">
+                        <div class=" col-lg-9 col-sm-12 mb-2 border rounded  p-2">
+                            <h1 class="text-capitalize"><u><%= event.title %> </u></h1>
+                            <div class="float-right bg-primary text-white p-1 rounded text-center">
+                                <% var ptime = event.posted  %>
+                                    <%= ptime.getDate() %> /
+                                        <%= ptime.getMonth() %>
+                                            <br>
+                                            <b> <%= ptime.getFullYear() %></b>
+                            </div>
+                            <span> Submitted by - <%= event.author.username %></span>
+                            <div> Event Type : <strong><%= event.EventType %></strong></div>
 
-          <div class="col-lg-1"> </div>
-          <div class=" col-lg-8  border rounded  p-lg-3">
-              <h1 class="text-capitalize"><u><%= event.title %> </u></h1>
-              <div class="float-right bg-primary text-white p-1 rounded text-center">
-                <% var ptime = event.posted  %>
-                  <%= ptime.getDate() %> /
-                    <%= ptime.getMonth() %>
-                      <br>
-                      <b> <%= ptime.getFullYear() %></b>
-              </div>
-              <span> Submitted by - <%= event.author.username %></span>
-              <div> Event Type : <strong><%= event.EventType %></strong></div>
+                            <div>Event Timings :
+                                <br>
 
-              <div>Event Timings :
-                  <br>
-
-                  <div class="float-left bg-primary text-white p-1 rounded text-center mx-2">
-                       <strong><%= event.startTime.slice(0,10) %>
+                                <div class="float-left bg-primary text-white p-1 rounded text-center mx-2">
+                                    <strong><%= event.startTime.slice(0,10) %>
                        <br><%= event.startTime.slice(11,16) %></strong>
-                   </div>
-                   <div class="float-left bg-primary text-white p-1 rounded text-center mx-2">
-                        <strong><%= event.endTime.slice(0,10) %>
+                                </div>
+                                <div class="float-left bg-primary text-white p-1 rounded text-center mx-2">
+                                    <strong><%= event.endTime.slice(0,10) %>
                         <br><%= event.endTime.slice(11,16) %></strong>
-                    </div>
-                    
-                    <br><br>
+                                </div>
 
-               </div>
-              <% if(event.link != ""){ %>
-                  <br><br>
-              <div class=" border rounded mx-lg-3 p-lg-1 "><strong> Official Link :</strong>
-                <p>
-                 <a href="<%= event.link %>" target="_blank" style="color:white;"> <%= event.link %> </a>
-              </div>
-              <% } %>
-              <div class=" border rounded m-lg-3 p-lg-1 "><strong> Description :</strong>
-                <p>
-                  <%= event.breif %>
-              </div>
+                                <br><br>
 
-          </div>
-          <div class="col-lg-2 border rounded  bg-white " style="color:#006266">
-                <h3>  Interested Students
+                            </div>
+                            <% if(event.link != ""){ %>
+                                <br><br>
+                                <div class=" border rounded m-2 p-1 "><strong> Official Link :</strong>
+                                    <p>
+                                        <a href="<%= event.link %>" target="_blank" style="color:white;">
+                                            <%= event.link %>
+                                        </a>
+                                </div>
+                                <% } %>
+                                    <div class=" border rounded m-2 p-1 "><strong> Description :</strong>
+                                        <p>
+                                            <%= event.breif %>
+                                    </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-sm-12 border rounded p-2 bg-white " style="color:#006266">
+                            <h3>  Interested Students
                   <% var pppp= event.interested;
 
                   var obj = 0 ;
@@ -61,16 +63,19 @@
                   if(currentUser && !obj){ %>
                   <a href="/events/<%= event._id %>/addInterested" class="btn btn-primary">Add me</a>
                     <% } %>
-                </h3><hr>
-                <ol>
-                  <% var pppp= event.interested;
+                </h3>
+                            <hr>
+                            <ol>
+                                <% var pppp= event.interested;
                    pppp.forEach(function(Interesteduser) { if(Interesteduser) { %>
-                     <li class="ml-3"><%= Interesteduser.username %> </li>
-                  <%} });%>
-                  </ol>
-          </div>
-          <div class="col-lg-1 ">
-          </div>
-        </div>
-      </div>
-      <% include ../partials/footer %>
+                                    <li class="ml-3">
+                                        <%= Interesteduser.username %>
+                                    </li>
+                                    <%} });%>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <% include ../partials/footer %>

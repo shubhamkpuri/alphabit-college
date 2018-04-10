@@ -18,7 +18,7 @@
 .navbar1{
   top:0px;
   position:absolute;
-  z-index:99;
+  z-index:1500;
   width:100vw;
   height:100vh;
   background: #000;
@@ -26,7 +26,7 @@
 }
 .navbar2 {
 
-    z-index: 1000;
+    z-index: 1500;
     height: 10vh;
     width: 100vw;
     top: 0px;
@@ -61,11 +61,13 @@
 .landing-page {
     color: white;
     margin: auto;
-    /* background:  linear-gradient(to right, rgba(28, 51, 110, 0.8), rgba(235, 235, 235, 0.7)),
-    linear-gradient(to right, #360033B3, #0b8793B3),url('http://avante.biz/wp-content/uploads/Computer-Wallpaper/Computer-Wallpaper-022.jpg'); */ */
+     background:  linear-gradient(to right, #34e89e8c, #0f34438c), url('../Images/testimage.jpg');
     /*position: relative;*/
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
 
-    background-color: #000;
+
 
 }
 
@@ -172,4 +174,43 @@ input:-ms-input-placeholder { /* Internet Explorer 10-11 */
 input::-ms-input-placeholder { /* Microsoft Edge */
     color: #006266 !important;
     text-align: center;
+}
+
+#wrapper{
+
+}
+.cards{
+  box-shadow: 10px 10px 8px #888888;
+}
+#show-div{
+    color:white;
+}
+.container{
+    margin-top: 6rem;
+    font-size:1.3rem;
+}
+
+/* //navbar animation */
+.addanimation{
+  animation: example .3s ease-out ;
+}
+.removeanimation{
+  animation: example1 .3s ease-in ;
+}
+@keyframes example {
+    0%   {  width:0px;}
+
+    100% {   width:100%;}
+}
+@keyframes example1{
+  0% { width:100%;}
+  100% { width:0px;}
+}
+
+
+@media only screen and (max-width: 600px) {
+    .row {
+        font-size:1.3rem;
+
+    }
 }

@@ -2,23 +2,20 @@
     <% include ../partials/landing-navbar %>
         <div id="wrapper">
             <div class="section ">
-                <div class="text-center" style="color:white; font-size:2rem; margin: auto; margin-top:5rem;">
-                    All Events
-                </div>
-                <div class="row mt-3">
-                    <% Events.forEach(function(event) { %>
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="card" class="ml-3">
-                                <div class="card-body">
-                                    <h5 class="card-title text-capitalize"><strong>
-                              <%= event.title%></strong>
-                              <span class="float-right btn btn-dark btn-sm">
-                               <%= event.EventType%>
-                              </span>
-                              </h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">
+                <div class=" container">
+                    <h1>All Events</h1>
+
+                    <div class="row mt-3">
+                        <% Events.forEach(function(event) { %>
+                            <div class="col-lg-5 col-sm-10 mt-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title  text-capitalize"><strong><%= event.title%></strong>
+                                      <span class="float-right btn btn-dark btn-sm"><%= event.EventType%></span>
+                                        </h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">
                                     <span class="float-left"> Timings :</span>
+                                    <br>
                                     <div class="float-left bg-primary text-white p-1 rounded text-center mx-2">
                                          <strong><%= event.startTime.slice(0,10) %>
                                          <br><%= event.startTime.slice(11,16) %></strong>
@@ -27,31 +24,31 @@
                                           <strong><%= event.endTime.slice(0,10) %>
                                           <br><%= event.endTime.slice(11,16) %></strong>
                                       </div>
-
                                       <br>
                                       <br>
                               </h6>
-                                    <p class="card-text">
-                                        <% var EventDesc = event.breif ;
+                                        <p class="card-text">
+                                            <% var EventDesc = event.breif ;
                               try{
                                   var EventDesc =EventDesc.substr(0,120) ;
                               }catch(e){
 
                               }%>
-                                            <%= EventDesc  %>
+                                                <%= EventDesc  %>
 
-                                    </p>
-                                    <a href="/events/<%= event._id %>" class="card-link btn btn-info">View</a>
-                                    <a href="#" class="btn btn-dark"><i class="fa fa-hand-o-up"></i>  <%= event.interested.length %> </a>
+                                        </p>
+                                        <a href="/events/<%= event._id %>" class="card-link btn btn-info">View</a>
+                                        <a href="#" class="btn btn-dark"><i class="fa fa-hand-o-up"></i>  <%= event.interested.length %> </a>
 
-                                    <span class="float-right">
+                                        <span class="float-right">
                               By <%= event.author.username%>
                               </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-1"></div>
-                        <% });%>
+                            <div class="col-lg-1 col-sm-1"></div>
+                            <% });%>
+                    </div>
                 </div>
             </div>
         </div>

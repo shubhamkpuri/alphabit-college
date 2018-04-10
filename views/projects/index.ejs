@@ -2,46 +2,46 @@
     <% include ../partials/landing-navbar %>
         <div id="wrapper">
             <div class="section ">
-              <div class="text-center" style="color:white; font-size:2rem; margin: auto; margin-top:5rem;">
-                All Projects
-              </div>
-                <div class="row mt-3">
-                    <% Projects.forEach(function(project) { %>
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="card" class="">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>
+                <div class="container">
+                    <h1>All Projects</h1>
+
+                    <div class="row mt-3">
+                        <% Projects.forEach(function(project) { %>
+                            <div class="col-lg-5 col-sm-10 mt-3">
+                                <div class="card" class="">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>
                                     <%= project.title%></strong>
                                     <span class="float-right btn btn-dark btn-sm">
                                      <%= project.type%>
                                     </span>
                                     </h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <h6 class="card-subtitle mb-2 text-muted">
                                     <%= project.technology%>
 
                                     </h6>
-                                    <p class="card-text">
-                                    <% var projectDesc = project.shortDesc ;
+                                        <p class="card-text">
+                                            <% var projectDesc = project.shortDesc ;
                                     try{
                                         var projectDesc = project.shortDesc.substr(0,120) ;
                                     }catch(e){
 
                                     }%>
-                                    <%= projectDesc  %>
+                                                <%= projectDesc  %>
 
-                                    </p>
-                                    <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
-                                    <a href="#" class="btn btn-dark"><i class="fa fa-eye"></i> <%= project.views %> </a>
-                                    <span class="float-right">
+                                        </p>
+                                        <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
+                                        <a href="#" class="btn btn-dark"><i class="fa fa-eye"></i> <%= project.views %> </a>
+                                        <span class="float-right">
                                     By <%= project.author.username%>
                                     </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-1"></div>
-                        <% });%>
+                            <div class="col-lg-1 col-sm-1"></div>
+                            <% });%>
+                    </div>
                 </div>
             </div>
         </div>
-      <% include ../partials/footer %>
+        <% include ../partials/footer %>
