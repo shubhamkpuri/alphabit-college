@@ -23,7 +23,20 @@ var UserSchema = new mongoose.Schema({
 });
 UserSchema.plugin(passportLocalMongoose);
 var User = mongoose.model("User", UserSchema);
+// User Deatils
+var UdetailsSchema = new mongoose.Schema({
+    user: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    },
+    email: String,
+    semester:Number,
 
+});
+var UserDeatil = mongoose.model("UserDeatil", UdetailsSchema);
 
 
 // Passport Coniguration
@@ -337,7 +350,7 @@ app.get('/events/:id/addInterested', isLoggedIn, (req, res) => {
 //show register form
 
 app.get("/register", (req, res) => {
-    res.render("register", {
+    res.render("login#singup", {
         title: "Register",
         msg: "5"
     });
@@ -350,13 +363,35 @@ app.post("/register", (req, res) => {
     User.register(newUser, req.body.password, (err, user) => {
         if (err) {
             console.log(err);
-            res.render("register", {
+            res.render("login#singup", {
                 title: "Register",
                 msg: err
             });
         }
+
+
+
         passport.authenticate("local")(req, res, () => {
-            res.redirect("/");
+            var newUserDetails = new UserDeatil({
+                user: {
+                    id:req.user.id,
+                username: req.user.username,
+            },
+                email:req.body.email,
+                semester:req.body.semester,
+            });
+
+            UserDeatil.create(newUserDetails, (err, newUserDetail) => {
+                if (err) {
+                    res.render("new");
+                } else {
+
+                    newUserDetail.save();
+
+                    res.redirect("/");
+                }
+            });
+
         });
     });
 });
@@ -364,7 +399,7 @@ app.post("/register", (req, res) => {
 // show login form
 app.get("/login", (req, res) => {
     res.render("login", {
-        title: "Register",
+        title: "Login",
     });
 });
 app.post("/login", passport.authenticate("local", {
