@@ -9,21 +9,31 @@
                     <div class="row m-lg-5 text-center" id="login" style="color:#006266; min-height:75vh;">
                         <div class="col-lg-4 bg-dark  p-3">
                             <h1> Login</h1>
-                            <h1> <a href="#signup"  id ="signUpAppear" class="btn btn-success">Don't have an account</a> </h1>
+                            <h1> <a href="#signup"  id ="signUpAppear" class="btn btn-success"><i class="fa fa-user-plus"></i> Don't have an account</a> </h1>
                         </div>
 
                         <div class="col-lg-8 p-lg-5 p-sm-3 bg-light">
-                            <div class=" p-2 rounded">
+                            <div class="table-bordered p-2 rounded">
                                 <form action="/login" method="POST">
                                     <div class="form-group">
                                         <%# <label for="username">Username:</label> %>
-                                            <input type="text" autofocus name="username" class="form-control" placeholder="Username" required="true">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user-circle"></i></span>
+                                                </div>
+                                                <input type="text" autofocus name="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1" required="true">
+                                            </div>
                                     </div>
                                     <div class="form-group">
-                                        <%# <label for="password">Password:</label> %>
-                                            <input type="password" name="password" placeholder="Password" class="form-control" required="true">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-eye-slash"></i></span>
+                                            </div>
+
+                                            <input type="password" name="password" placeholder="Password" class="form-control" aria-describedby="basic-addon2" required="true">
+                                        </div>
                                     </div>
-                                    <button class="btn btn-success">LogIn</button>
+                                    <button class="btn btn-success"><i class="fa fa-unlock"></i> LogIn</button>
                                 </form>
                             </div>
                         </div>
@@ -31,19 +41,33 @@
                     <div class="row m-lg-5 text-center d-none" id="signup" style="color:#006266; min-height:75vh;">
                         <div class="col-lg-4 bg-dark  p-3">
                             <h1> SignUp</h1>
-                            <h1> <a href="#login" id ="logInAppear" class="btn btn-success">Already have account</a> </h1>
+                            <h1> <a href="#login" id ="logInAppear" class="btn btn-success"><i class="fa fa-unlock"></i> Already have account</a> </h1>
                         </div>
                         <div class="col-lg-8 p-lg-5 p-sm-3 bg-light">
                             <div class="table-bordered p-2 rounded">
                                 <form action="/register" method="POST">
+                                    
                                     <div class="form-group">
-
-                                        <input type="text" name="username" minlength="4" class="form-control" placeholder="Username" required="true">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon3"><i class="fa fa-user-circle"></i></span>
+                                            </div>
+                                            <input type="text" name="username" minlength="4" maxlength="10" class="form-control"  aria-describedby="basic-addon3" placeholder="Username (Be Creative Be Unique)" required="true">
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Email" required="true">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon4"><i class="fa fa-envelope"></i></span>
+                                            </div>
+                                            <input type="email" name="email" class="form-control"  aria-describedby="basic-addon4" placeholder="Email" required="true">
+                                        </div>
                                     </div>
                                     <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon5"><i class="fa fa-graduation-cap"></i></span>
+                                            </div>
 
                                         <select class="form-control text-center" name="semester" id="project[type]">
                                             <option value="1" >1st Sem</option>
@@ -56,12 +80,17 @@
                                             <option value="8">8th Sem</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-
-                                        <input type="password" name="password" minlength="4" placeholder="Password" class="form-control" required="true">
                                     </div>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon5"><i class="fa fa-eye-slash"></i></span>
+                                            </div>
 
-                                    <button class="btn btn-success">Sign Up</button>
+                                            <input type="password" name="password" minlength="4" placeholder="Password"  aria-describedby="basic-addon5" class="form-control" required="true">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success"><i class="fa fa-user-plus"></i> Sign Up</button>
                                 </form>
 
                             </div>

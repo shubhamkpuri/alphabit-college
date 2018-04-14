@@ -28,14 +28,23 @@
                         <% if(!currentUser){%>
 
 
-                       <a href="/login" class="btn btn-success  my-2">Login / SingUp</a>
+                       <a href="/login" class="btn btn-success  m-1">Login / SingUp</a>
                        <br>
                        <% } else { %>
-                       <span class="btn btn-info  text-capitalize my-2"><%= currentUser.username %></span>
+                       <a href="/userProfile/show/<%= currentUser.id %>" class="btn btn-info  text-capitalize my-2"><%= currentUser.username %></a>
                        <br>
-                          <a class="btn btn-danger  my-2" href="/logout">Logout</a>
+                          <a class="btn btn-danger  m-1" href="/logout">Logout</a>
                           <br>
                         <% } %>
+
+                        <div class="m-3 text-center">
+                            <a href="projects" class="btn btn-info m-1">View All Projects</a>
+                            <a href="projects/new" class="btn btn-success m-1">Post Project</a>
+                        </div>
+                        <div class="m-3 text-center">
+                            <a href="events" class="btn btn-info m-1">View All Events</a>
+                            <a href="events/new" class="btn btn-success m-1">Submit an Event</a>
+                        </div>
                         </div>
                 </div>
                 <button id="cancel" class="btn-danger btn mt-3 p-1" onclick="cancelfun()"><i class="fa fa-remove"></i>Cancel</button>

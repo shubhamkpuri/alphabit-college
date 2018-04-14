@@ -1,4 +1,5 @@
-var express = require('express'),
+var
+    express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     passport = require('passport'),
@@ -7,8 +8,8 @@ var express = require('express'),
 
     passportLocalMongoose = require("passport-local-mongoose");
 var app = express();
-
-mongoose.connect("mongodb://skpuri:skpuri@ds255768.mlab.com:55768/yelp_camp")
+require("dotenv/config"),
+mongoose.connect(process.env.MLAB)
 //mongoose.connect("mongodb://localhost/alphbit");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -202,11 +203,22 @@ app.get('/projects/new', isLoggedIn, (req, res) => {
 app.post("/projects", (req, res) => {
     // req.body.project.author = req.user;
     // console.log(req.body.project.author);
+    var newProject = new UserDeatil({
+        user: {
+            id:req.user.id,
+        username: req.user.username,
+    },
+        email:req.body.email,
+        semester:req.body.semester,
+    });
     Project.create(req.body.project, (err, newProject) => {
         if (err) {
             res.render("new");
         } else {
-            newProject.author = req.user;
+            newProject.author = {
+                id:req.user.id,
+                username:req.user.username,
+            };
             newProject.save();
             //redirect to index
             res.redirect("/");
@@ -282,7 +294,10 @@ app.post("/events", (req, res) => {
         if (err) {
             res.render("new");
         } else {
-            newEvent.author = req.user;
+            newEvent.author = {
+                id:req.user.id,
+                username:req.user.username,
+            };
             newEvent.save();
             //redirect to index
             res.redirect("/events");
@@ -341,6 +356,12 @@ app.get('/events/:id/addInterested', isLoggedIn, (req, res) => {
     });
 });
 
+// User Profile
+app.get("/userProfile/show/:id",(req,res)=>{
+    res.render("userProfile/show.ejs",{
+        title:"User",
+    });
+})
 
 
 //=======================
