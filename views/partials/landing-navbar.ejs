@@ -31,7 +31,8 @@
                        <a href="/login" class="btn btn-success  m-1">Login / SingUp</a>
                        <br>
                        <% } else { %>
-                       <a href="/userProfile/show/<%= currentUser.id %>" class="btn btn-info  text-capitalize my-2"><%= currentUser.username %></a>
+                       <a href="#" class="btn btn-info  text-capitalize my-2"><%= currentUser.username %></a>
+                      <!-- /userProfile/show/currentUser.id  -->
                        <br>
                           <a class="btn btn-danger  m-1" href="/logout">Logout</a>
                           <br>
