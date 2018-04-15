@@ -23,11 +23,11 @@
                                         <p class="card-text">
                                             <% var projectDesc = project.shortDesc ;
                                     try{
-                                        var projectDesc = project.shortDesc.substr(0,120) ;
+                                        var projectDesc = project.shortDesc.substr(0,100) ;
                                     }catch(e){
 
                                     }%>
-                                                <%= projectDesc  %>
+                                                <%= projectDesc  %>...
 
                                         </p>
                                         <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>

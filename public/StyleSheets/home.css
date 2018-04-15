@@ -9,7 +9,9 @@
  float: right;
   z-index: 2;
 }
-
+.card-title{
+     color:#006266;
+}
 
 .navbar-hide{
   display:none;

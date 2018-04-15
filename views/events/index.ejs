@@ -30,11 +30,11 @@
                                         <p class="card-text">
                                             <% var EventDesc = event.breif ;
                               try{
-                                  var EventDesc =EventDesc.substr(0,120) ;
+                                  var EventDesc =EventDesc.substr(0,100) ;
                               }catch(e){
 
                               }%>
-                                                <%= EventDesc  %>
+                                                <%= EventDesc  %> ...
 
                                         </p>
                                         <a href="/events/<%= event._id %>" class="card-link btn btn-info">View</a>

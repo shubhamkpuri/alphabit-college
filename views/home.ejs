@@ -2,7 +2,8 @@
     <% include partials/landing-navbar %>
         <div id="wrapper">
             <div class="section landing-page text-center ">
-                <h1 style="font-size: 6rem;"><span style="font-size: 9rem;">&alpha;</span>Bit</h1>
+                <h1 style="font-size: 6rem;"><span style="font-size: 12rem;">&alpha;</span>bit</h1>
+                    <h2 style="font-size: 2.6rem;">Computer Society Of GBPEC</h2>
                 <a href="roadmap" class="btn btn-info btn-lg">RoadMap for CSE</a>
             </div>
             <div class="section ">
@@ -33,11 +34,11 @@
                                         <p class="card-text">
                                             <% var EventDesc = event.breif ;
                               try{
-                                  var EventDesc =EventDesc.substr(0,120) ;
+                                  var EventDesc =EventDesc.substr(0,70) ;
                               }catch(e){
 
                               }%>
-                                                <%= EventDesc  %>
+                                                <%= EventDesc   %>...
 
                                         </p>
                                         <a href="/events/<%= event._id %>" class="card-link btn btn-info">View</a>
@@ -72,7 +73,7 @@
                                         <h5 class="card-title"><strong>
                                         <%= project.title%></strong>
                                         <span class="float-right btn btn-dark btn-sm">
-                                         <%= project.type%>
+                                         <%- project.type%>
                                         </span>
                                         </h5>
                                         <h6 class="card-subtitle mb-2 text-muted">
@@ -82,11 +83,11 @@
                                         <p class="card-text">
                                             <% var projectDesc = project.shortDesc ;
                                         try{
-                                            var projectDesc = project.shortDesc.substr(0,120) ;
+                                            var projectDesc = project.shortDesc.substr(0,70) ;
                                         }catch(e){
 
                                         }%>
-                                                <%= projectDesc  %>
+                                                <%= projectDesc  %>...
 
                                         </p>
                                         <a href="/projects/<%= project._id %>" class="card-link btn btn-info">View</a>
@@ -144,58 +145,60 @@
 
 
                 <h1>Core Team</h1>
-                <div class="row">
-
-                    <div class="col-lg-3">
+                <div class="row" style="font-size:.9rem;">
+                    <div class="col-lg-1  "></div>
+                    <div class="col-lg-2 col-sm-4 p-1 m-1">
                         <div class="card">
                             <img class="card-img-top " src="https://res.cloudinary.com/skpuri/image/upload/c_scale,w_1077/v1522903889/shubhamPuri.jpg" alt="Card image" style="width:100%">
                             <div class="card-body">
-                                <h4 class="card-title">Shubham Puri</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a href="#" class="btn btn-primary">See Profile</a>
+                                <h4 class="card-title" >Shubham Puri</h4>
+                                <p class="card-text">3rd year undergard, flag bearer of the project adept in backend, frontend and Competitive Programming</p>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-2 col-sm-4 p-1 m-1">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Prathmesh Maurya</h4>
-                                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
-                                <a href="#" class="btn btn-primary">See Profile</a>
+                                <h4 class="card-title" >Prathmesh Maurya</h4>
+                                <p class="card-text">3rd year undergrad, team leader adept in Android Development along with decent knowledge of Python.</p>
+
                             </div>
                             <img class="card-img-bottom" src="http://res.cloudinary.com/skpuri/image/upload/v1522994158/IMG-20180405-WA0029.jpg" alt="Card image" style="width:100%">
                         </div>
                     </div>
-                    <div class="col-lg-3">
+
+                    <div class="col-lg-2 col-sm-4 p-1 m-1">
                         <div class="card">
                             <img class="card-img-top" src="https://pbs.twimg.com/profile_images/758916607523508224/HtPcWsuc_400x400.jpg" alt="Card image" style="width:100%">
                             <div class="card-body">
                                 <h4 class="card-title">Kundan </h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a href="#" class="btn btn-primary">See Profile</a>
+                                <p class="card-text">3rd year undergrad, adept in front-end along with decent knowledge of backend and Competitive Programming.</p>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-2 col-sm-4 p-1 m-1">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Lakshay Sharma</h4>
-                                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
-                                <a href="#" class="btn btn-primary">See Profile</a>
+                                <p class="card-text">3rd year undergrad, adept in front-end along with decent knowledge of backend and Competitive Programming.</p>
+
                             </div>
                             <img class="card-img-bottom" src="http://res.cloudinary.com/skpuri/image/upload/v1522905143/IMG-20180405-WA0003.jpg" style="width:100%">
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-2 col-sm-4 p-1 m-1">
                         <div class="card">
                             <img class="card-img-top" src="https://res.cloudinary.com/skpuri/image/upload/v1522905314/IMG-20180405-WA0002.jpg" alt="Card image" style="width:100%">
                             <div class="card-body">
                                 <h4 class="card-title">Anupam</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a href="#" class="btn btn-primary">See Profile</a>
+                                <p class="card-text">3rd year undergrad, adept in backend along with decent knowledge of Competitive Programming.</p>
+
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-1 "></div>
                 </div>
             </div>
             </div>

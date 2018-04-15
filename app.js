@@ -156,7 +156,9 @@ app.get("/", (req, res) => {
     }).limit(4).exec((err, Projects) => {
 
         if (err) {
-            console.log("ERROR!");
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
         } else {
             Event.find({}).sort({
                 posted: -1
@@ -213,7 +215,10 @@ app.post("/projects", (req, res) => {
     });
     Project.create(req.body.project, (err, newProject) => {
         if (err) {
-            res.render("new");
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
+            //res.render("new");
         } else {
             newProject.author = {
                 id:req.user.id,
@@ -229,6 +234,9 @@ app.post("/projects", (req, res) => {
 app.get('/projects/:id', (req, res) => {
     Project.findById(req.params.id, (err, foundProject) => {
         if (err) {
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
             console.log("problem");
             // res.redirect("/projects");
         } else {
@@ -249,6 +257,9 @@ app.get('/projects', (req, res) => {
     }).exec((err, Projects) => {
 
         if (err) {
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
             console.log("ERROR!");
         } else {
             res.render("projects/index.ejs", {
@@ -261,6 +272,9 @@ app.get('/projects', (req, res) => {
 app.get('/projects/:id/addInterested', isLoggedIn, (req, res) => {
     Project.findById(req.params.id, (err, foundProject) => {
         if (err) {
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
             console.log("problem");
             // res.redirect("/projects");
         } else {
@@ -292,6 +306,9 @@ app.post("/events", (req, res) => {
     console.log(req.body.event.author);
     Event.create(req.body.event, (err, newEvent) => {
         if (err) {
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
             res.render("new");
         } else {
             newEvent.author = {
@@ -308,6 +325,9 @@ app.post("/events", (req, res) => {
 app.get('/events/:id', (req, res) => {
     Event.findById(req.params.id, (err, foundEvent) => {
         if (err) {
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
             console.log("problem");
             // res.redirect("/projects");
         } else {
@@ -327,6 +347,9 @@ app.get('/events', (req, res) => {
     }).exec((err, Events) => {
 
         if (err) {
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
             console.log("ERROR!");
         } else {
             res.render("events/index.ejs", {
@@ -339,6 +362,9 @@ app.get('/events', (req, res) => {
 app.get('/events/:id/addInterested', isLoggedIn, (req, res) => {
     Event.findById(req.params.id, (err, foundEvent) => {
         if (err) {
+            res.render("error.ejs",{
+                msg : err, title: "Error "
+            });
             console.log("problem");
             // res.redirect("/projects");
         } else {
@@ -383,11 +409,14 @@ app.post("/register", (req, res) => {
     });
     User.register(newUser, req.body.password, (err, user) => {
         if (err) {
-            console.log(err);
-            res.render("login#singup", {
-                title: "Register",
-                msg: err
+            res.render("error.ejs",{
+                msg : err, title: "Error "
             });
+            console.log(err);
+            // res.render("login#singup", {
+            //     title: "Register",
+            //     msg: err
+            // });
         }
 
 
@@ -404,6 +433,9 @@ app.post("/register", (req, res) => {
 
             UserDeatil.create(newUserDetails, (err, newUserDetail) => {
                 if (err) {
+                    res.render("error.ejs",{
+                        msg : err, title: "Error "
+                    });
                     res.render("new");
                 } else {
 

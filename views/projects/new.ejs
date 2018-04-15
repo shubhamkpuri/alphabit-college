@@ -9,13 +9,13 @@
                     <div class="form-group p-2 p-lg-3 border rounded  mx-auto">
                         <div class="form-group  m-lg-3">
                             <label for="name[title]">Title:</label>
-                            <input type="text" name="project[title]" id="projectName" placeholder="Project Name" onfocus="formvalidate(3,projectName,projectName)" class="form-control " required="true">
+                            <input type="text" name="project[title]" minlength="3" id="projectName" placeholder="Project Name" onfocus="formvalidate(3,projectName,projectName)" class="form-control " required="true">
 
                         </div>
                         <div class="form-group m-lg-3">
                             <label for="sel1" name="project[type]">Project Type:</label>
                             <select class="form-control" name="project[type]" id="project[type]">
-                                <option value="Android">Android</option>
+                                <option value="<i class="fa fa-android"></i>Android">Android</option>
                                 <option value="Web Development">Web Development</option>
                                 <option value="Machine Learning">Machine Learning</option>
                                 <option value="AI">Artificial Intelligence</option>
@@ -25,15 +25,15 @@
                         </div>
                         <div class="form-group  m-lg-3">
                             <label for="name[technology]">Technology to be used:</label>
-                            <input type="text" name="project[technology]" placeholder="like Php" class="form-control" id="autoFill" required="true">
+                            <input type="text" name="project[technology]" minlength="5" placeholder="like Php" class="form-control" id="autoFill" required="true">
                         </div>
                         <div class="form-group  m-lg-3">
-                            <label for="name[title]">Short Description(must be between 30 - 50 words):</label>
-                            <input type="text" name="project[shortDesc]" placeholder="Brief" class="form-control " required="true">
+                            <label for="name[title]">Short Description:</label>
+                            <input type="text" name="project[shortDesc]" placeholder="Brief" minlength="30" class="form-control " required="true">
                         </div>
                         <div class="form-group  m-lg-3">
                             <label for="blog[body]">Complete Project Description:</label>
-                            <textarea name="project[body]" placeholder="blog post" rows="7" class="form-control"></textarea>
+                            <textarea name="project[body]" placeholder="blog post" rows="7" minlength="50" class="form-control"></textarea>
                         </div>
                         <input type="submit" name="submit" class="btn btn-success btn-lg ml-3">
                     </div>
